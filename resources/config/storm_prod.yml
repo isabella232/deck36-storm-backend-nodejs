@@ -1,0 +1,25 @@
+imports:
+    - { resource: storm.yml }
+
+deck36_storm:
+    debug:  false
+    default_parallelism_hint:    1
+    default_num_tasks:   1
+
+    nodejs:
+            executor:   "/usr/bin/node"
+
+    rabbitmq:
+        host:           "localhost"
+        port:           5672
+        user:           "guest"
+        pass:           "guest"
+        vhost:          "/"
+        heartbeat:      10
+        prefetch:       1
+        spout_tasks:    4
+
+
+    HighFiveStreamJoinBolt:
+        main:       "HighFiveStreamJoinBolt.prod.js"
+

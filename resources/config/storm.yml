@@ -1,0 +1,17 @@
+deck36_storm:
+    HighFiveStreamJoinBolt:
+        main:       "HighFiveStreamJoinBolt.js"
+        params:
+        rabbitmq:
+            exchange:        "plan9"
+            routing_key:     "cbt.#"
+            target_exchange: "plan9-backchannel"
+        badge_timewindow:   35
+        badge:
+            name: "HighFive"
+            text: "Hands up! You used the same cat to solve! Hooray!"
+            color:   "#232312"
+            size:    "30em"
+            effect:  "explode"
+
+
