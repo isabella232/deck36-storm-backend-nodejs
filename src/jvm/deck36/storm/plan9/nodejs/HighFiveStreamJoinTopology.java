@@ -54,10 +54,11 @@ public class HighFiveStreamJoinTopology {
         }
 
         if (! "dev".equals(env))
-            if (! "prod".equals(env)) {
-                System.out.println("Usage: $0 (dev|prod)\n");
-                System.exit(1);
-            }
+            if (! "local".equals(env))
+                if (! "prod".equals(env)) {
+                    System.out.println("Usage: $0 (local|dev|prod)\n");
+                    System.exit(1);
+                }
 
 
         // Topology config
@@ -168,7 +169,7 @@ public class HighFiveStreamJoinTopology {
                 .setNumTasks(num_tasks)
                 .shuffleGrouping("rabbitmq_router");
 
-        if ("dev".equals(env)) {
+        if ("dev".equals(env) || "local".equals(env)) {
             LocalCluster cluster = new LocalCluster();
             cluster.submitTopology(badgeName + System.currentTimeMillis(), conf, builder.createTopology());
             Thread.sleep(2000000);
