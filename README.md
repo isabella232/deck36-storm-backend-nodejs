@@ -24,10 +24,10 @@ In your local machine (not within the vagrant), go to the "deck36-storm-backend-
 
 Set correct maven repository directory in IDEA .iml file. We provide the "patch_local_m2_dir.sh" script to automatically update the iml file. In the background, the vagrant mounts a local directory as its maven repository dir, so we have access to it.
 
-	```
-	# run in your local environment 
-	./patch_local_m2_dir.sh
-	```
+```
+# run in your local environment 
+./patch_local_m2_dir.sh
+```
 
 Start up Intellij and open the deck36-storm-backend-nodejs.ipr project file. Enter File->Project Structure and choose your JDK. A JDK version of 1.7+ is required. Increase the language level to at least 7.0.
 
