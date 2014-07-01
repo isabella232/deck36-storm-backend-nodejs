@@ -10,8 +10,8 @@ deck36_storm:
         badge:
             name: "HighFive"
             text: "Hands up! You used the same cat to solve! Hooray!"
-            color:   "#232312"
-            size:    "30em"
+            color:   "red"
+            size:    "20px"
             effect:  "explode"
 
 
