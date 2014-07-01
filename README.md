@@ -22,26 +22,28 @@ The instructions provided here work with Intellij 13 Community Edition. IDE's ot
 
 In your local machine (not within the vagrant), go to the "deck36-storm-backend-nodejs" project. The `./prepare.sh` script we executed within the vagrant already created IDEA project files. However, they lack local configuration for the maven repository, JDK/language settings, and project structure.
 
-	1. Set correct maven repository directory in IDEA .iml file. We provide the "patch_local_m2_dir.sh" script to automatically update the iml file. In the background, the vagrant mounts a local directory as its maven repository dir, so we have access to it.
+1. Set correct maven repository directory in IDEA .iml file. We provide the "patch_local_m2_dir.sh" script to automatically update the iml file. In the background, the vagrant mounts a local directory as its maven repository dir, so we have access to it.
 
 		```
 		# run in your local environment 
 		./patch_local_m2_dir.sh
 		```
 
-	2. Start up Intellij and open the deck36-storm-backend-nodejs.ipr project file. Enter File->Project Structure and choose your JDK. A JDK version of 1.7+ is required. Increase the language level to at least 7.0.
+2. Start up Intellij and open the deck36-storm-backend-nodejs.ipr project file. Enter File->Project Structure and choose your JDK. A JDK version of 1.7+ is required. Increase the language level to at least 7.0.
 
 		![IDEA SDK Settings](idea_sdk_settings.png)
 
-	3. In the same window of File->Project Structure, navigate to "Modules" under "Project Settings". Now configure the path structure: Add "src/jvm" as "source directory". Remove "src" as "source" directory. Add "resources/config" as "resources" directory. The other settings in the screenshot are optinal.
+
+3. In the same window of File->Project Structure, navigate to "Modules" under "Project Settings". Now configure the path structure: Add "src/jvm" as "source directory". Remove "src" as "source" directory. Add "resources/config" as "resources" directory. The other settings in the screenshot are optinal.
 
 		![IDEA Path Structure](idea_path_structure.png)
 
-	4. In the project tree viewer, navigate to the HighFiveStreamJoinTopology, activate the context menu and choose "run". This will create a configuration to run that particular class. The execution will abort with an error regarding missing command line parameters.
+
+4. In the project tree viewer, navigate to the HighFiveStreamJoinTopology, activate the context menu and choose "run". This will create a configuration to run that particular class. The execution will abort with an error regarding missing command line parameters.
 
 		![Run HighFiveStreamJoinTopology](idea_run_topology.png)
 
-	5. Configure the command line parameters for executing the topology. Enter Run->Edit Configurations and set "Program arguments" to "local".
+5. Configure the command line parameters for executing the topology. Enter Run->Edit Configurations and set "Program arguments" to "local".
 
 		![Configure Command line arguments](idea_configure_run.png)
 
