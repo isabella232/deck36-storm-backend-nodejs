@@ -1,0 +1,5 @@
+deck36-storm-backend-nodejs.*
+resources/config/config
+resources/nodejs/resources
+.lein-git-deps/
+target/

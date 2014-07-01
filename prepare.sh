@@ -3,7 +3,6 @@ sudo cp ./lein /usr/local/bin
 sudo chmod 775 /usr/local/bin/lein
 sudo chown vagrant:vagrant .m2
 
-ln -s ../../deck36-api-backend/config/ resources/config
 ln -s ../../../deck36-api-backend/target resources/nodejs/resources
 
 DIR=`pwd`
